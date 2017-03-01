@@ -97,7 +97,7 @@
 		
 		<script type="text/javascript">
 			  $(document).ready(function() {
-    //提示：已经在页面导航部分的Settings中的JavaScript部分引入了wildog.js和jquery.js
+    //提示：已经在head引入了wildog.js和jquery.js
 	  //在www.wildog.com 注册一个账号，创建一个应用，自动生成一个url,替换下边url即可
 			  var ref = new Wilddog("https://danmmu123.wilddogio.com/messages");
 			  var arr = [];
@@ -130,13 +130,14 @@
 			  });
 		
 			  ref.on('child_removed',
-		function() {
-			arr = [];
-			$('.dm_show').empty();
-		});
+				function() {
+					arr = [];
+					$('.dm_show').empty();
+				});
 		//按照时间规则显示弹幕内容。	
 		var topMin = $('.dm_mask').offset().top;
 		var topMax = topMin + $('.dm_mask').height();
+			 
 			  var _top = topMin;
 		
 			  var moveObj = function(obj) {
